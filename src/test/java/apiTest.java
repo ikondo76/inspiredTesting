@@ -1,5 +1,6 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.Assert;
 
 public class apiTest {
 
@@ -21,5 +22,9 @@ public class apiTest {
         System.out.println("Status Code: " + response.statusCode());
         System.out.println("First Name: " + response.jsonPath().getString("data.first_name"));
         System.out.println("Avatar URL: " + response.jsonPath().getString("data.avatar"));
+
+        Assert.assertEquals(response.statusCode(), 200, "Expected status code 200");
     }
+
+
 }
