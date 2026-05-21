@@ -15,7 +15,7 @@ public class apiTest {
         Response response = RestAssured
                 .given()
                 .header("reqres-free-v1", API_KEY)
-                .get(BASE_URL);
+                .get(BASE_URL)
                 .then()
                 .statusCode(200)
                 .extract()
