@@ -28,7 +28,7 @@ public class apiTest {
 
     public void updateEmailAddress() {
 //        RestAssured.baseURI = BASE_URL;
-        String payload = "{ \"email\": \"ignatius@gmail.com\" }";
+        String payload = "{ \"email\": \"ikondo@gmail.com\" }";
 
         Response res = RestAssured
                 .given()
@@ -40,12 +40,24 @@ public class apiTest {
                 .extract().response();
 
         Assert.assertEquals(res.statusCode(), 200);
-        Assert.assertEquals(res.jsonPath().getString("email"), "ignatius@example.com");
+        Assert.assertEquals(res.jsonPath().getString("email"), "ikondo@gmail.com");
     }
 
+    public void deleteLastName() {
+        String payload = "{ \"last_name\": \"\" }";
 
+        Response res = RestAssured
+                .given()
+                .header("reqres-free-v1", API_KEY)
+                .header("Content-Type", "application/json")
+                .body(payload)
+                .patch(BASE_URL)
+                .then()
+                .extract().response();
 
-
+        Assert.assertEquals(res.statusCode(), 200);
+        Assert.assertEquals(res.jsonPath().getString("last_name"), "");
+    }
 }
 
 
