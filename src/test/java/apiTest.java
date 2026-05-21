@@ -1,7 +1,9 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
+@Test
 public class apiTest {
 
     final String BASE_URL = "https://reqres.in/api/users/2";
