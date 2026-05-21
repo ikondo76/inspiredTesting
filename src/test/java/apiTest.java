@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 @Test
 public class apiTest {
 
-    final String BASE_URL = "https://reqres.in/api/users/2";
-    final String API_KEY = "reqres-free-v1";
+    private final String BASE_URL = "https://reqres.in/api/users/2";
+    private final String API_KEY = "reqres-free-v1";
 
     public void retrieveUser() {
         RestAssured.baseURI = BASE_URL;
